@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+
+        </style>
+</head>
+
+<body>
+    <ul class="nav nav-tabs d-flex justify-content-around p-1 navclassforjs " id="myTab" role="tablist"
+        style="background-color: var(--primarycolor--);">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active  text-light bg-success btnofnavinadmin" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                aria-selected="true">Main Dashboard</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-light bg-success btnofnavinadmin" id="profile-tab" data-bs-toggle="tab"
+                data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                aria-selected="false">Orders</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-light bg-success btnofnavinadmin" id="contact-tab" data-bs-toggle="tab"
+                data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+                aria-selected="false">Setting</button>
+        </li>
+
+    </ul>
+    <div class="tab-content " id="myTabContent" style="color: var(--secondarycolor--);">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0" id="dashboardcontainer">
+            <!--Dashboard content-->
+            <h1 id="welcomeheading">Welcome Admin!</h1>
+            <span id="welcomedisc">Manage, monitor, and control all aspects of your platform with ease</span>
+            <div id="percentstatistics" class="d-flex flex-row justify-content-around m-5">
+                <div class="stat-card" data-aos="zoom-out-down" data-aos-duration="1000">
+                    <span class="text-success">75%</span>
+                    <div class="stat-description">Interaction This Week</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-out-down" data-aos-duration="1000">
+                    <span class="text-danger">12%</span>
+                    <div class="stat-description">Decline This Week</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-out-down" data-aos-duration="1000">
+                    <span class="text-success">320</span>
+                    <div class="stat-description">Orders This Week</div>
+                </div>
+            </div>
+            <div id="graphical-representation">
+                <canvas id="myChart" style="width:100%;max-width:700px" class="mx-auto"></canvas>
+            </div>
+            <span id="spanof-chart">Monthly orders graph</span>
+            <h2 id="feedback-heading">Feedback by users</h2>
+            <div id="feedback" class="ms-5 mx-5">
+                <ol>
+                    <% arrayoffeedback.forEach((obj) => { %>
+                        <li class="feedbackli"><%= obj.feedback %> ( <%= obj.nameofgiver %> )</li>
+                      <% }) %>                      
+                </ol>
+                <span id="msgaboutfeedback-two"></span>
+        <form action="/admindashboard/clearfeedbacks" method="post"  id="feedbackform"><button type="submit" id="clearfeedbacks-btn"> Clear all</button></form>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+<div id="totalstats-orders">
+    <span id="communalspan" >
+        <%= recommunal %> out of <%= tcommunal %> Communal sitting plans has reserved
+        <% if (recommunal === tcommunal) { %>
+          <span>(All reserved)</span>
+          <% %>
+        <% } %>
+      </span>
+      
+<span id="tableandchairspan"><%= retableandchair %> out of <%= ttableandchair %> Table and Chair sitting plans has reserved
+<% if(retableandchair===ttableandchair){ %>
+    <span>(All reserved)</span>
+<% }%>
+
+</span>
+<span id="boothspan"><%= rebooth %> out of <%= tbooth %> Booth sitting plans has reserved
+    <% if(rebooth===tbooth){ %>
+        <span>(All reserved)</span>
+    <% }%>
+</span>
+</div>
+     
+<!--Custom modal for handling orders-->
+
+<div id="customModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <form id="reservationEditForm" method="post"  action="/admindashboard">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required><br><br>
+        
+        <label for="duration">Duration:</label>
+        <input type="number" id="duration" name="duration" min="1" required> hours<br><br>
+        
+        <label for="numberOfGuests">Number of Guests:</label>
+        <input type="number" id="numberOfGuests" name="numberOfGuests" min="1" required><br><br>
+        
+        <label for="seatingPlan">Seating Plan:</label>
+        <select id="seatingPlan" name="seatingPlan" required>
+          <option value="booth">Booth</option>
+          <option value="tableandchair">Table and Chair</option>
+          <option value="communal">Communal</option>
+        </select><br><br>
+    
+        <textarea name="discoforderbyadmin" id="discoforder-byadmin"  spellcheck="false">
+
+        </textarea>
+        <button type="submit" id="sendmailbtn-modal">Send mail</button>
+      </form>
+      
+    </div>
+  </div>
+
+<div id="customModal2" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn2" class="close">&times;</span>
+    
+      
+      <form id="reservationdeclineform" method="post"  action="/admindashboard/declineorder">
+          <input type="hidden" name="emailtodecline"  id="emailtodecline">
+        <textarea name="discoforderbyadmin" id="discoforder-byadmin"  spellcheck="true">
+        </textarea>
+        <button type="submit" id="sendmailbtn-modal">Send mail</button>
+      </form>
+      
+    </div>
+  </div>
+  
+ 
+            <div id="allorders-customer">
+            
+                <% arrayofreservations.forEach((reservation) => { %>
+                    <div class="orderofcustomer">
+                      <div><b><span>Full Name:</span></b><span class="fullName"> <%= reservation.fullName %></span></div>
+                      <div><b><span class="email">Email:</span></b><span> <%= reservation.email %></span></div>
+                      <div><b><span class="phone">Phone:</span></b><span> <%= reservation.phone %></span></div>
+                      <div><b><span class="date">Date:</span></b> <span><%= reservation.date %></span></div>
+                      <div><b><span class="time">Time:</span></b> <span><%= reservation.time %></span></div>
+                      <div><b><span class="duration">Duration:</span></b><span> <%= reservation.duration %></span></div>
+                      <div><b><span class="numberOfGuests">Number of Guests:</span></b><span> <%= reservation.numberOfGuests %></span></div>
+                      <div><b><span class="seatingPlan">Seating Plan:</span></b><span> <%= reservation.seatingPlan %></span></div>
+                      <div class="orderofcustomer-button-container">
+                        <% if (!reservation.mailsent) { %>
+                            
+
+                          <span><button class="acceptorder openModalBtn">Accept</button></span>
+                          <span><button class="declineorder openModalBtn2" type="submit">Decline</button></span>
+             
+                        <% } else { %>
+                            <form action="/admindashboard/removeorder" method="post" class="d-flex justify-content-around" style="width:100%;">
+                                <input type="hidden" name="emailtoremove" value="<%= reservation.email %>">
+                          <span><button class="acceptedorder" style="opacity: 0.5;" disabled>Accepted</button></span>
+                          <span><button class="removeorder " type="submit" >Remove</button></span>
+                        </form>
+                        <% } %>
+                      </div>
+                    </div>
+                  <% }) %>
+                  
+
+
+
+          
+
+
+            </div>
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+       <h3 id="settingheading">Setting</h3>
+<div id="allsetting-container">
+ <div class="form-check form-switch " id="allowdark-mode">
+     <label class="form-check-label" for="flexSwitchCheck-darkmode">Dark mode</label>
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheck-darkmode">
+  </div>
+  
+
+<div id="update-numbers" class="d-flex flex-column">
+    <h5 class="mt-3">Update</h5>
+    <form action="/admindashboard/updatetotalnumber" method="post" class="d-flex flex-column">
+    <label for="Communalnumber"> Communal </label>
+    <input type="number" id="Communalnumber"  value="<%= `${tcommunal}` %>" name="communalupdated"  min="<%= `${recommunal}` %>" required>
+
+    <label for="TableandChairnumber"> Chair and Table </label>
+    <input type="number" id="TableandChairnumber" value="<%= `${ttableandchair}` %>" name="tableandchairupdated"  min="<%= `${retableandchair}` %>" required>
+  
+    <label for="Boothnumber"> Booth </label>
+    <input type="number" id="Boothnumber" value="<%= `${tbooth}` %>" name="boothupdated"  min="<%= `${rebooth}` %>" required>
+   <input type="submit" value="Update total numbers" id="submitbtnofupdate" >
+</form>
+</div>
+
+                </div>
+
+        </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="adminpage.js"></script>
+
+
+        <script>
+ 
+
+ 
+            AOS.init({
+                disable: false,
+                startEvent: 'DOMContentLoaded',
+                initClassName: 'aos-init',
+                animatedClassName: 'aos-animate',
+                useClassNames: false,
+                disableMutationObserver: false,
+                debounceDelay: 50,
+                throttleDelay: 99,
+
+                offset: 120,
+                delay: 0,
+                duration: 400,
+                easing: 'ease',
+                once: false,
+                mirror: false,
+                anchorPlacement: 'top-bottom',
+            });
+        </script>
+</body>
+
+</html>

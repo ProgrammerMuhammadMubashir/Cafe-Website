@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+    <header id="headerofindex">
+        <div id="toleft">
+            <img src="resources/icon.png" alt="iconofcafe" width="10%" style="border-radius: 50%; width: 42px;">
+            <h1 id="mainheading">Mubashir Café</h1>
+        </div>
+        <img src="resources/menuicon.webp" alt="" id="menu-icon">
+       
+        <nav  id="navofindex">
+        <ul>
+    <a href="/mainpage"><li>Home</li></a>
+    <a href="/menu"> <li>Menu</li></a>
+    <a href="/onlinereservation"><li>Online reservation</li></a>
+    <a href="/contactus"> <li>Contact us</li></a>
+</ul>
+</nav>
+<div id="navofindexmobile" class="displaynone">
+      
+        <ul class="navofindexmobile-ul">
+    <a href="/mainpage"><li>Home</li></a>
+    <a href="/menu"> <li>Menu</li></a>
+    <a href="/onlinereservation"><li>Online reservation</li></a>
+    <a href="/contactus"> <li>Contact us</li></a>
+</ul>  
+        
+</div>
+    </header>
+<main>
+    <div id="imgcontainerpluscontactform-container">
+        <div id="imgcontainer">
+        <img src="resources/slide1.webp" alt="" id="slide1">
+       
+        </div>
+        <h2 style="color: var(--primarycolor--);font-family: var(--writingsfont--); margin: 10px; " class="contactus-line">Your experience matters to us deeply – your feedback shapes the soul of what we create</h2>
+        <form method="post" action="/contactus"  id="contactus-form">
+                    <label for="feedbackName">Your Name:</label>
+                    <input type="text" id="feedbackName" name="feedbackName" placeholder="Enter your name" required>
+                  
+                    <label for="feedbackMessage">Your Feedback:</label>
+                    <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Write your feedback here..." rows="10" cols="10" required></textarea>
+                 <span id="msgaboutfeedback"> <%= msg %> </span> 
+                    <button type="submit">Submit Feedback</button>
+                  </form>
+    </div>
+    <div id="statistics-container">
+<p id="numberofbranches">0</p>
+<p id="customersperday">0</p>
+<p id="feedbackstats">0</p>
+    </div>
+
+  <center>  <div id="lastpara-container">
+        <span id="comma-start">❝ Thank you</span><p> for being a part of our journey and allowing us to share our passion with you. Our café is more than just a place to grab a coffee or a meal—it’s a community built on warmth, care, and connection. We take pride in using the finest ingredients, crafting every cup and dish with attention to detail and love, ensuring you experience the best of what we have to offer. Our mission is to create a space where everyone feels at home, whether you're here to work, relax, or enjoy meaningful moments with loved ones.  
+
+    At the heart of what we do is a commitment to quality, from the rich aroma of our freshly brewed coffee to the inviting atmosphere that soothes your mind and soul. We aim to be a place where inspiration is sparked, conversations flow effortlessly, and memories are made to last.  
+    
+    As you reach the end of your visit today, we want you to know how much we value your support. Your presence motivates us to continually improve and ensure every visit is as delightful as the last. We hope our café has added a touch of joy to your day, and we can’t wait to welcome you back for more moments of comfort, flavor, and happiness. Until next time, take care and carry the warmth of our café with you!</p><span id="comma-end">❞</span>
+    <span id="ownername">MuhammadMubashir</span>
+</center>
+    </div>
+    <!-- <img src="resources/ownerpic.jpg" alt="" id="ownerpic"> -->
+
+    <h3 style="color: var(--primarycolor--);font-family: var(--writingsfont--); margin: 10px 5px; ">Know more about us:</h3>
+    <div  id="socialmedialinks-container">
+        <img src="resources/facebookicon.webp" alt="" >
+        <img src="resources/twittericon.png" alt="" >
+        <img src="resources/meta-x.webp" alt="" >
+        <img src="resources/linkedinicon.webp" alt="" >
+        <img src="resources/gmailicon.webp" alt="" >
+    </div>
+</main>
+<footer>
+    <span> &copy; All rights reserved to MuhammadMubashir</span>
+</footer>
+<script src="contactus.js"></script>
+    </body>
+</html>

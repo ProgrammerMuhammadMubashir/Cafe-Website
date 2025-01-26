@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <header id="headerofindex">
+    <div id="toleft">
+        <img src="resources/icon.png" alt="iconofcafe" width="10%" style="border-radius: 50%; width: 42px;">
+        <h1 id="mainheading">Mubashir Café</h1>
+    </div>
+    <img src="resources/menuicon.webp" alt="" id="menu-icon">
+   
+    <nav  id="navofindex">
+    <ul>
+<a href="/mainpage"><li>Home</li></a>
+<a href="/menu"> <li>Menu</li></a>
+<a href="/onlinereservation"><li>Online reservation</li></a>
+<a href="/contactus"> <li>Contact us</li></a>
+</ul>
+</nav>
+<div id="navofindexmobile" class="displaynone">
+  
+    <ul class="navofindexmobile-ul">
+<a href="/mainpage"><li>Home</li></a>
+<a href="/menu"> <li>Menu</li></a>
+<a href="/onlinereservation"><li>Online reservation</li></a>
+<a href="/contactus"> <li>Contact us</li></a>
+</ul>  
+    
+</div>
+</header>
+    <main>
+        <h2 style="color: var(--primarycolor--);font-family: var(--primaryfont--); text-align: center; margin: 20px 0px;">Online Reservation System</h2>
+    
+    <div id="main-form-reservation-container">
+        <form action="/onlinereservation" method="post" id="main-form-reservation">
+          <span id="msgaboutre"><%= msg %></span>
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+              </div>
+            
+              <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+            
+              <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone"placeholder="e.g., 1234567890" required>
+              </div>
+            
+              <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" placeholder="Select a date" required>
+              </div>
+            
+              <div>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" placeholder="Select a time" required>
+              </div>
+            
+              <div>
+                <label for="duration">Duration (in hours):</label>
+                <input type="number" id="duration" name="duration" min="1" max="5" placeholder="Enter duration (1-5 hrs)" required>
+              </div>
+            
+              <div>
+                <label for="numberOfGuests">Number of Guests:</label>
+                <input type="number" id="numberOfGuests" name="numberOfGuests" min="1" max="20" placeholder="Enter total guests (e.g., 2)" required>
+              </div>
+            
+              <div>
+                 <span>Choose the sitting plan</span>
+                 <div  id="all-sittingplans">
+                   <div>
+  <label>
+    <input type="radio" name="seatingPlan" value="tableandchair" id="tableandchairoption" required>
+    Traditional
+  </label>
+  <img src="resources/table-and-chair.jpg" alt="tableandchairsitting" class="sitting-plan-img" id="tableandchairimg">
+</div>
+
+<div>
+  <label>
+    <input type="radio" name="seatingPlan" value="communal" required id="communaloption">
+    Communal
+  </label>
+  <img src="resources/communal.jpg" alt="Communalsitting" class="sitting-plan-img" id="communalimg">
+
+</div>
+
+<div>
+  <label>
+    <input type="radio" name="seatingPlan" value="booth" required id="boothoption">
+    Booth
+  </label>
+  <img src="resources/booth.jpg" alt="Boothsitting" class="sitting-plan-img" id="boothimg">
+</div>
+</div>
+                
+                 
+              </div>
+             
+              <div>
+                <button type="submit" id="form-sumbit-btn">Reserve Now</button>
+              </div>       
+
+        </form>
+       
+    </div>
+    
+    </main>
+    <footer>
+        <span> &copy; All rights reserved to MuhammadMubashir</span>
+    </footer>
+    <script src="onlinereservation.js"></script>
+</body>
+</html>

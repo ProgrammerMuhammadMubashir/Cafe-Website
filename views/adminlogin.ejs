@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ 
+</head>
+
+<body>
+
+<main>
+  <div id="loginform-container">
+    <h2 style="color: var(--primarycolor--);font-family: var(--primaryfont--);">Admin Login</h2>
+    <form action="/adminlogin" method="post" id="loginform">
+      <label for="emailofadmin">Email</label>
+      <input type="email" id="emailofadmin" name="emailofadmin" required spellcheck="false" placeholder="Write email here">
+      <label for="passwordofadmin">Password</label>
+      <input type="password" id="passwordofadmin" name="passwordofadmin" required spellcheck="false" placeholder="Write password here">
+    <button type="submit" id="loginsumbit-btn">Login</button>
+    <span><%= msg %></span>
+  </form>
+  </div>
+</main>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+
+   AOS.init({
+  disable: false,
+  startEvent: 'DOMContentLoaded',
+  initClassName: 'aos-init',
+  animatedClassName: 'aos-animate',
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+  
+  offset: 120,
+  delay: 0,
+  duration: 400,
+  easing: 'ease',
+  once: false,
+  mirror: false,
+  anchorPlacement: 'top-bottom',
+});
+
+
+
+ 
+
+
+  </script>
+</body>
+</html>
