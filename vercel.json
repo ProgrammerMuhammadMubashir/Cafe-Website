@@ -1,7 +1,6 @@
 {
     "rewrites": [
-      { "source": "/", "destination": "/mainpage" }
-    ],
-    "outputDirectory": "build"
+      { "source": "/{.*}", "destination": "/" }
+    ]
   }
   
