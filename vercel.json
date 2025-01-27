@@ -1,9 +1,6 @@
 {
     "version":2,
     "builds":[{"src":"./script.js","use":"@versel/node"}],
-    "routes":[{"src":"/(.*)","dest":"/"}],
-    "rewrites": [
-      { "source": "/", "destination": "/" }
-    ]
+    "routes":[{"src":"/(.*)","dest":"/"}]
   }
   
