@@ -6,11 +6,12 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon script.js"
+    "start": "nodemon script.js"
   },
   "author": "MuhammadMubashir",
   "license": "ISC",
   "dependencies": {
+    "@vercel/node": "^5.0.2",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
