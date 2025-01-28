@@ -28,6 +28,9 @@ app.use("/onlinereservation",onlinereservationroute)
 app.use("/adminlogin",adminloginroute)
 app.use("/admindashboard/updatetotalnumber",updatetotalnumberroute)
 
+basicroute.get(["/mainpage", "/"],(req,res)=>{
+  res.render("index.ejs")
+  })
 
 app.listen(port,()=>{
 console.log(`Server is listening at the ${port}`)

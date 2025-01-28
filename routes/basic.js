@@ -13,9 +13,7 @@ basicroute.post("/admindashboard/removeorder",removeorderfunc)
 basicroute.post("/admindashboard/declineorder",declineemailsenderfunc)
 
 
-basicroute.get(["/mainpage", "/"],(req,res)=>{
-    res.render("index.ejs")
-    })
+
 basicroute.get("/menu",(req,res)=>{
     res.render("menu.ejs")
 
