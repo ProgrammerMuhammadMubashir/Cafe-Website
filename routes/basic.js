@@ -1,7 +1,6 @@
 import express, { Router } from "express"
 const basicroute=express.Router()
 import bcrypt from 'bcrypt'
-import session from "express-session"
 import countcollection from "../models/count.js"
 import {emailsenderfunc,clearfeedbacksfunc,removeorderfunc,declineemailsenderfunc}  from "../controllers/adminpage.js"
 

@@ -18,7 +18,7 @@ app.use(session({
   cookie: { secure: false ,maxAge: 24*60*60*1000}
 }))
 
-app.set("use engine","ejs")
+app.set("view engine","ejs")
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 
