@@ -12,10 +12,9 @@ basicroute.post("/admindashboard",emailsenderfunc)
 basicroute.post("/admindashboard/clearfeedbacks",clearfeedbacksfunc)
 basicroute.post("/admindashboard/removeorder",removeorderfunc)
 basicroute.post("/admindashboard/declineorder",declineemailsenderfunc)
-basicroute.get("/",(req,res)=>{
-    res.redirect("/mainpage")
-})
-basicroute.get("/mainpage",(req,res)=>{
+
+
+basicroute.get(["/mainpage", "/"],(req,res)=>{
     res.render("index.ejs")
     })
 basicroute.get("/menu",(req,res)=>{
