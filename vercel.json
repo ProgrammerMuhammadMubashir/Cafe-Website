@@ -1,6 +1,6 @@
 {
     
     "builds":[{"src":"./script.js","use":"@versel/node"}],
-    "routes":[{"src":"/(.*)","dest":"/"}]
+    "routes":[{"src":"/(.*)","dest":"/script.js"}]
   }
   
