@@ -11,7 +11,6 @@
   "author": "MuhammadMubashir",
   "license": "ISC",
   "dependencies": {
-    "@vercel/node": "^5.0.2",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
