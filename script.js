@@ -2,7 +2,7 @@ import express from "express"
 const app=express()
 import dotenv from "dotenv";
 dotenv.config()
-const port=3000 || process.env.port
+const port= process.env.PORT || 3000
 import basicroute from "./routes/basic.js"
 import onlinereservationroute from "./routes/onlinereservation.js"
 import adminloginroute from "./routes/adminlogin.js"
