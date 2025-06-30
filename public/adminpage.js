@@ -189,9 +189,3 @@ if(initalsforsittingPlan===option.innerText){
 
 
 
-  //accept and decline order
-  
-
-// acceptorder.addEventListener("submit",()=>{
-// console.log(acceptorder.nextElementSibling)
-// })

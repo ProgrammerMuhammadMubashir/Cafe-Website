@@ -2,7 +2,7 @@ import feedbackcollection from "../models/contactus.js";
 
 const feedbackfunc=async(req,res)=>{
 let {feedbackName,feedbackMessage}=req.body;
-feedbackName=feedbackName.trim()
+feedbackName=feedbackName.trim() //to keep name and messages consistent by removing extra spacies
 feedbackMessage=feedbackMessage.trim()
 
 try{

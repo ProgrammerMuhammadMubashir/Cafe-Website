@@ -75,7 +75,7 @@ const clearfeedbacksfunc=async(req,res)=>{
   try{
   
     
-let z=await feedbackcollection.deleteMany({})
+let z=await feedbackcollection.deleteMany({}) //will delete all feedback at once , Clear COllecion
 res.redirect("/admindashboard")
 
   
@@ -117,7 +117,7 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = {
     from: process.env.ADMIN_EMAIL,
-    to:"itismubashiratcode@gmail.com" , 
+    to:emailtodecline , 
     subject: `Reservation Alert!`,
     text: `Dear Customer,
   

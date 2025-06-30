@@ -9,6 +9,7 @@ const adminloginfunc = async (req, res) => {
 
     if (emailofadmin === process.env.ADMIN_EMAIL) {
         const isPasswordMatch = await bcrypt.compare(passwordofadmin, process.env.ADMIN_PASSWORD);
+   
         if (isPasswordMatch) {
             req.session.signin="Signindone"
             res.redirect("/admindashboard");
