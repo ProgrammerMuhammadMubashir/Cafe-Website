@@ -25,6 +25,7 @@ Please contact **[itismubashiratcode@gmail.com](mailto:itismubashiratcode@gmail.
 - **Backend:** Node.js (Express.js)  
 - **Database:** MongoDB  
 
+---
 
 ## 🎥 Demo
 [Watch Full Demo](https://www.loom.com/share/78bc1adf2fc442f490aa381acce52e9a)
