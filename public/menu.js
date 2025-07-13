@@ -24,7 +24,7 @@ mealType.addEventListener("change",()=>{
     const foodTypenameforLunch = ["Salad", "Sushi", "Soup", "Burger", "Sandwich"];
     const foodTypenameforDinner = ["Pizza", "Steak", "Curry", "Pasta", "Tacos"];
     alldeals.innerHTML=''
-    fetch(`https://pixabay.com/api/?key=47517174-e821c9cff0b00c988bab2d29c&q=${mealType.value}&image_type=photo&per_page=${numberofimgs}`)
+    fetch(`https://pixabay.com/api/?key=REPLACE_WITH_YOUR_KEY_FOR_LOCAL_TESTING=${mealType.value}&image_type=photo&per_page=${numberofimgs}`)
     .then(response => response.json())
     .then(data => {
         for(i=0;i<numberofimgs;i++){
@@ -107,7 +107,7 @@ window.addEventListener("load",()=>{
     "Salad", "Sushi", "Soup", "Burger", "Sandwich",
     "Pizza", "Steak", "Curry", "Pasta", "Tacos"
   ][Math.floor(Math.random()*15)]
-      fetch(`https://pixabay.com/api/?key=47517174-e821c9cff0b00c988bab2d29c&q=${topicofdeal}&image_type=photo&per_page=${numberofimgs}`)
+      fetch(`https://pixabay.com/api/?key=REPLACE_WITH_YOUR_KEY_FOR_LOCAL_TESTING=${topicofdeal}&image_type=photo&per_page=${numberofimgs}`)
       .then(response => response.json())
       .then(data => {
           for(i=0;i<numberofimgs;i++){
@@ -147,7 +147,7 @@ window.addEventListener("load",()=>{
 foodType.addEventListener("change",()=>{
   alldeals.innerHTML=''
     let topicofdeal=foodType.value
-    fetch(`https://pixabay.com/api/?key=47517174-e821c9cff0b00c988bab2d29c&q=${topicofdeal}&image_type=photo&per_page=${numberofimgs}`)
+    fetch(`https://pixabay.com/api/?key=REPLACE_WITH_YOUR_KEY_FOR_LOCAL_TESTING=${topicofdeal}&image_type=photo&per_page=${numberofimgs}`)
     .then(response => response.json())
     .then(data => {
         for(i=0;i<numberofimgs;i++){
