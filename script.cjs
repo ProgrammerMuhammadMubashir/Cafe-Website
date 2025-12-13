@@ -42,5 +42,4 @@ app.get(["/mainpage", "/"],(req,res)=>{
   res.render("index.ejs")
   })
 
-
-module.exports=app
+export default app;
