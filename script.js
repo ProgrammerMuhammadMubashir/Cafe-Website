@@ -32,6 +32,7 @@ app.get(["/mainpage", "/"],(req,res)=>{
   res.render("index.ejs")
   })
 
-app.listen(port,()=>{
-console.log(`Server is listening at the ${port}`)
-})
+// app.listen(port,()=>{
+// console.log(`Server is listening at the ${port}`)
+// })
+module.exports=app
