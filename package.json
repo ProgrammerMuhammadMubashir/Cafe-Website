@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A cafe website as a practice.By Muhammad Mubashir ",
-  "main": "script.js",
+  "main": "script.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon script.js"
