@@ -1,6 +1,5 @@
 # Cafe Website  
 
-
 Welcome to the **Cafe Website** repository, featuring a modern and interactive solution for managing and enhancing your café's online presence. This repository contains proprietary code and resources designed to deliver an exceptional user experience while ensuring efficient backend functionality.  
 
 ---
@@ -24,11 +23,6 @@ Please contact **[itismubashiratcode@gmail.com](mailto:itismubashiratcode@gmail.
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Node.js (Express.js)  
 - **Database:** MongoDB  
-
----
-
-## 🎥 Demo
-[Watch Full Demo](https://www.loom.com/share/78bc1adf2fc442f490aa381acce52e9a)
 
 ---
 

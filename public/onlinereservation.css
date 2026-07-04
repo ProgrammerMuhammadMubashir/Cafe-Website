@@ -1,0 +1,1170 @@
+/*==================================================
+                RESERVATION MAIN
+==================================================*/
+
+.res-main{
+
+    width:min(1200px,92%);
+    margin:140px auto 80px;
+
+}
+
+
+
+/*==================================================
+                HERO SECTION
+==================================================*/
+
+.res-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:70px 60px;
+
+    border-radius:35px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.70),
+    rgba(255,255,255,.38));
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.res-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(212,175,55,.22),
+
+    transparent 70%
+
+    );
+
+    top:-180px;
+
+    left:-120px;
+
+}
+
+.res-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(92,64,51,.10),
+
+    transparent 70%
+
+    );
+
+    right:-120px;
+
+    bottom:-140px;
+
+}
+
+.res-title{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:56px;
+
+    color:var(--coffee-dark);
+
+    font-family:"Playfair Display",serif;
+
+    margin-bottom:18px;
+
+}
+
+.res-subtitle{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#6b5d56;
+
+}
+
+
+
+/*==================================================
+                FORM WRAPPER
+==================================================*/
+
+.res-form-wrapper{
+
+    position:relative;
+
+    background:rgba(255,255,255,.60);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    border-radius:35px;
+
+    padding:55px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.res-form-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(212,175,55,.18),
+
+    transparent 70%
+
+    );
+
+    right:-100px;
+
+    top:-100px;
+
+}
+
+.res-form-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(92,64,51,.10),
+
+    transparent 70%
+
+    );
+
+    left:-90px;
+
+    bottom:-90px;
+
+}
+
+
+
+/*==================================================
+                FORM
+==================================================*/
+
+.res-form{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+
+}
+
+
+
+/*==================================================
+                FORM GROUP
+==================================================*/
+
+.res-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.res-group-full{
+
+    grid-column:1/-1;
+
+}
+
+
+
+/*==================================================
+                LABELS
+==================================================*/
+
+.res-label{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--coffee-dark);
+
+    letter-spacing:.3px;
+
+}
+
+
+
+/*==================================================
+                INPUTS
+==================================================*/
+
+.res-input{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+
+    inset 0 1px 3px rgba(0,0,0,.05);
+
+    font-size:15px;
+
+    color:var(--coffee-dark);
+
+    transition:var(--transition);
+
+}
+
+.res-input::placeholder{
+
+    color:#a3948c;
+
+}
+
+.res-input:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.res-input:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+
+    0 0 0 4px rgba(212,175,55,.18),
+
+    0 12px 28px rgba(0,0,0,.08);
+
+    background:white;
+
+}
+
+
+
+/*==================================================
+                MESSAGE
+==================================================*/
+
+.res-message{
+
+    grid-column:1/-1;
+
+    padding:16px 22px;
+
+    border-radius:16px;
+
+    background:rgba(212,175,55,.10);
+
+    border:1px solid rgba(212,175,55,.20);
+
+    color:var(--coffee-dark);
+
+    font-weight:600;
+
+    text-align:center;
+
+    min-height:25px;
+
+}
+/*==================================================
+                SEATING SECTION
+==================================================*/
+
+.res-seating-title{
+
+    display:block;
+
+    margin-bottom:22px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:var(--coffee-dark);
+
+}
+
+.res-seating-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+
+}
+
+
+
+/*==================================================
+                SEATING CARD
+==================================================*/
+
+.res-seat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.30);
+
+    box-shadow:var(--shadow);
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+
+.res-seat-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+
+/*==================================================
+                HIDE RADIO
+==================================================*/
+
+.res-seat-card input[type="radio"]{
+
+    display:none;
+
+}
+
+
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.res-seat-image{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.res-seat-card:hover .res-seat-image{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*==================================================
+                INFO
+==================================================*/
+
+.res-seat-info{
+
+    padding:22px;
+
+    text-align:center;
+
+}
+
+.res-seat-name{
+
+    font-size:24px;
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--coffee-dark);
+
+    margin-bottom:8px;
+
+}
+
+.res-seat-description{
+
+    font-size:14px;
+
+    color:#6d6058;
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+                CHECK ICON
+==================================================*/
+
+.res-seat-check{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    color:transparent;
+
+    transition:.35s;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+/*==================================================
+            SELECTED CARD
+==================================================*/
+
+.res-seat-card:has(input:checked){
+
+    border:2px solid var(--gold);
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 25px 50px rgba(212,175,55,.20);
+
+}
+
+.res-seat-card:has(input:checked) .res-seat-check{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+.res-seat-card:has(input:checked) .res-seat-image{
+
+    transform:scale(1.08);
+
+}
+
+.res-seat-card:has(input:checked) .res-seat-name{
+
+    color:var(--gold);
+
+}
+
+
+
+/*==================================================
+            SHINE EFFECT
+==================================================*/
+
+.res-seat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.45),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.res-seat-card:hover::before{
+
+    animation:shine .9s;
+
+}
+
+
+
+/*==================================================
+                MESSAGE SUCCESS
+==================================================*/
+
+.res-message.success{
+
+    background:rgba(59,179,112,.12);
+
+    border:1px solid rgba(59,179,112,.25);
+
+    color:#23834d;
+
+}
+
+
+
+/*==================================================
+                MESSAGE ERROR
+==================================================*/
+
+.res-message.error{
+
+    background:rgba(228,74,74,.10);
+
+    border:1px solid rgba(228,74,74,.20);
+
+    color:#b63030;
+
+}
+
+
+
+/*==================================================
+                FLOATING DECOR
+==================================================*/
+
+.res-seat-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(212,175,55,.12),
+
+    transparent 70%
+
+    );
+
+    right:-80px;
+
+    bottom:-80px;
+
+    pointer-events:none;
+
+}
+/*==================================================
+                SUBMIT BUTTON
+==================================================*/
+
+.res-submit-wrapper{
+
+    grid-column:1/-1;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:20px;
+
+}
+
+.res-submit-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px 55px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--coffee),
+    var(--coffee-light));
+
+    box-shadow:
+
+    0 18px 35px rgba(92,64,51,.25);
+
+    transition:all .35s ease;
+
+}
+
+.res-submit-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 25px 50px rgba(92,64,51,.35);
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--gold),
+    #e3c45b);
+
+    color:var(--coffee-dark);
+
+}
+
+.res-submit-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.res-submit-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.res-submit-btn:hover::before{
+
+    animation:shine .8s;
+
+}
+
+
+
+/*==================================================
+                FORM ANIMATION
+==================================================*/
+
+.res-form-wrapper{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.res-group{
+
+    animation:fadeUp .7s ease both;
+
+}
+
+.res-group:nth-child(2){animation-delay:.05s;}
+.res-group:nth-child(3){animation-delay:.10s;}
+.res-group:nth-child(4){animation-delay:.15s;}
+.res-group:nth-child(5){animation-delay:.20s;}
+.res-group:nth-child(6){animation-delay:.25s;}
+.res-group:nth-child(7){animation-delay:.30s;}
+.res-group:nth-child(8){animation-delay:.35s;}
+.res-group:nth-child(9){animation-delay:.40s;}
+
+
+
+/*==================================================
+                INPUT ICON EFFECT
+==================================================*/
+
+.res-input:hover{
+
+    background:white;
+
+}
+
+.res-input[type="date"]{
+
+    cursor:pointer;
+
+}
+
+.res-input[type="time"]{
+
+    cursor:pointer;
+
+}
+
+
+
+/*==================================================
+                PLACEHOLDER
+==================================================*/
+
+.res-input::placeholder{
+
+    transition:.3s;
+
+}
+
+.res-input:focus::placeholder{
+
+    opacity:.55;
+
+}
+
+
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.res-main{
+
+    width:94%;
+
+}
+
+.res-hero{
+
+    padding:55px 35px;
+
+}
+
+.res-title{
+
+    font-size:45px;
+
+}
+
+.res-form-wrapper{
+
+    padding:35px;
+
+}
+
+.res-form{
+
+    grid-template-columns:1fr;
+
+}
+
+.res-group-full{
+
+    grid-column:auto;
+
+}
+
+.res-seating-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.res-main{
+
+    margin-top:120px;
+
+}
+
+.res-hero{
+
+    padding:45px 25px;
+
+}
+
+.res-title{
+
+    font-size:36px;
+
+}
+
+.res-subtitle{
+
+    font-size:15px;
+
+}
+
+.res-form-wrapper{
+
+    padding:25px;
+
+    border-radius:28px;
+
+}
+
+.res-input{
+
+    height:54px;
+
+}
+
+.res-seating-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.res-seat-image{
+
+    height:220px;
+
+}
+
+.res-submit-btn{
+
+    width:100%;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.res-title{
+
+    font-size:30px;
+
+}
+
+.res-subtitle{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.res-form-wrapper{
+
+    padding:20px;
+
+}
+
+.res-seat-name{
+
+    font-size:22px;
+
+}
+
+.res-seat-description{
+
+    font-size:13px;
+
+}
+
+.res-submit-btn{
+
+    padding:16px;
+
+    font-size:16px;
+
+}
+
+}
+
+
+
+/*==================================================
+                KEYFRAMES
+==================================================*/
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+@keyframes shine{
+
+0%{
+
+left:-120%;
+
+}
+
+100%{
+
+left:150%;
+
+}
+
+}
+
+
+
+/*==================================================
+            PREMIUM BACKGROUND BLOBS
+==================================================*/
+
+.res-main::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    top:-100px;
+
+    right:-120px;
+
+    background:
+
+    radial-gradient(
+
+        rgba(212,175,55,.10),
+
+        transparent 70%
+
+    );
+
+    z-index:-1;
+
+}
+
+.res-main::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+    left:-120px;
+
+    background:
+
+    radial-gradient(
+
+        rgba(92,64,51,.08),
+
+        transparent 70%
+
+    );
+
+    z-index:-1;
+
+}
+
+
+
+/*==================================================
+            HOVER IMPROVEMENTS
+==================================================*/
+
+.res-group:hover .res-label{
+
+    color:var(--gold);
+
+}
+
+.res-label{
+
+    transition:.3s;
+
+}
+
+.res-input{
+
+    transition:all .3s ease;
+
+}

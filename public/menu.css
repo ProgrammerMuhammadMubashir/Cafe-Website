@@ -1,0 +1,1221 @@
+/*==================================================
+                    MENU MAIN
+==================================================*/
+
+.menu-main{
+
+    width:min(1250px,92%);
+
+    margin:140px auto 80px;
+
+}
+
+
+
+/*==================================================
+                    HERO SECTION
+==================================================*/
+
+.menu-hero{
+
+    position:relative;
+
+    padding:90px 50px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(43,29,24,.92),
+        rgba(92,64,51,.82)
+    );
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    isolation:isolate;
+
+}
+
+.menu-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(212,175,55,.25),
+    transparent 45%),
+
+    radial-gradient(circle at bottom left,
+    rgba(255,255,255,.08),
+    transparent 50%);
+
+    z-index:-1;
+
+}
+
+.menu-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    top:-180px;
+
+    right:-120px;
+
+    filter:blur(10px);
+
+    animation:floating 8s infinite ease-in-out;
+
+    z-index:-1;
+
+}
+
+.menu-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:58px;
+
+    color:white;
+
+    margin-bottom:18px;
+
+    animation:fadeUp .8s;
+
+}
+
+.menu-subtitle{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    animation:fadeUp 1.1s;
+
+}
+
+
+
+/*==================================================
+                    FILTER SECTION
+==================================================*/
+
+.menu-filter-section{
+
+    margin-top:60px;
+
+}
+
+
+
+.menu-filter-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp 1.2s;
+
+}
+
+
+
+/*==================================================
+                FILTER TITLE
+==================================================*/
+
+.menu-filter-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    min-width:180px;
+
+}
+
+.menu-filter-icon{
+
+    width:42px;
+
+    height:42px;
+
+    object-fit:contain;
+
+}
+
+.menu-filter-title{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--coffee-dark);
+
+}
+
+
+
+/*==================================================
+                SELECT BOXES
+==================================================*/
+
+.menu-select{
+
+    flex:1;
+
+    min-width:240px;
+
+    height:58px;
+
+    padding:0 22px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:white;
+
+    color:var(--coffee-dark);
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    box-shadow:
+
+    0 8px 18px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+
+}
+
+.menu-select:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.menu-select:focus{
+
+    border:2px solid var(--gold);
+
+}
+
+
+
+/*==================================================
+                    MENU GRID
+==================================================*/
+
+.menu-items-section{
+
+    margin-top:70px;
+
+}
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+
+
+/*==================================================
+                EMPTY STATE
+==================================================*/
+
+.menu-grid:empty{
+
+    min-height:300px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    border:2px dashed rgba(92,64,51,.25);
+
+}
+
+
+
+/*==================================================
+            SECTION SPACING
+==================================================*/
+
+.menu-items-section{
+
+    padding-bottom:20px;
+
+}
+
+
+
+/*==================================================
+            SMALL TRANSITIONS
+==================================================*/
+
+.menu-select,
+.menu-filter-box,
+.menu-hero{
+
+    transition:var(--transition);
+
+}
+
+
+
+
+/*==================================================
+                MENU CARD
+==================================================*/
+
+.menu-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.62);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    position:relative;
+
+    height:100%;
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.16);
+
+}
+
+
+
+/*=========================================
+            SHINE EFFECT
+=========================================*/
+
+.menu-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-140%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.55),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.menu-card:hover::before{
+
+    animation:shine .9s;
+
+}
+
+
+
+/*=========================================
+            IMAGE
+=========================================*/
+
+.menu-card-image-wrapper{
+
+    height:220px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.menu-card-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.menu-card:hover .menu-card-image{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*=========================================
+            BADGE
+=========================================*/
+
+
+
+
+/*=========================================
+            CONTENT
+=========================================*/
+
+.menu-card-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:28px;
+
+}
+
+
+
+/*=========================================
+            TOP INFO
+=========================================*/
+
+.menu-card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.menu-rating{
+
+    color:#ffb400;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.menu-category{
+
+    font-size:13px;
+
+    color:#8a7d75;
+
+}
+
+
+
+/*=========================================
+            TITLE
+=========================================*/
+
+.menu-card-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    color:var(--coffee-dark);
+
+    margin-bottom:14px;
+
+}
+
+
+
+/*=========================================
+            DESCRIPTION
+=========================================*/
+
+.menu-card-description{
+
+    color:#6e625a;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:28px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+.menu-card-footer{
+
+    margin-top:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+/*=========================================
+            PRICE
+=========================================*/
+
+.menu-price{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.menu-price-label{
+
+    font-size:12px;
+
+    color:#888;
+
+    letter-spacing:1px;
+
+}
+
+.menu-price-value{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--coffee-dark);
+
+}
+
+
+
+
+
+
+/*=========================================
+            DIVIDER
+=========================================*/
+
+.menu-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(0,0,0,.06);
+
+    margin:18px 0;
+
+}
+
+
+
+/*=========================================
+            HOVER EFFECTS
+=========================================*/
+
+.menu-card:hover .menu-card-title{
+
+    color:var(--gold);
+
+}
+
+.menu-card:hover .menu-price-value{
+
+    color:var(--gold);
+
+}
+
+.menu-card:hover .menu-rating{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*=========================================
+            TRANSITIONS
+=========================================*/
+
+.menu-card-title,
+
+.menu-price-value,
+
+.menu-rating,
+
+.menu-order-btn,
+
+.menu-card-image{
+
+    transition:.35s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media (max-width:1200px){
+
+    .menu-title{
+    
+        font-size:50px;
+    
+    }
+    
+    .menu-grid{
+    
+        grid-template-columns:
+        repeat(2,1fr);
+    
+    }
+    
+    }
+    
+    
+    
+    @media (max-width:992px){
+    
+    .menu-main{
+    
+        margin-top:130px;
+    
+    }
+    
+    .menu-hero{
+    
+        padding:70px 35px;
+    
+    }
+    
+    .menu-title{
+    
+        font-size:44px;
+    
+    }
+    
+    .menu-subtitle{
+    
+        font-size:17px;
+    
+    }
+    
+    .menu-filter-box{
+    
+        justify-content:center;
+    
+    }
+    
+    .menu-filter-heading{
+    
+        width:100%;
+    
+        justify-content:center;
+    
+    }
+    
+    .menu-select{
+    
+        min-width:280px;
+    
+    }
+    
+    .menu-grid{
+    
+        grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+    
+    }
+    
+    }
+    
+    
+    
+    @media (max-width:768px){
+    
+    .menu-main{
+    
+        width:94%;
+    
+    }
+    
+    .menu-hero{
+    
+        padding:55px 25px;
+    
+        border-radius:25px;
+    
+    }
+    
+    .menu-title{
+    
+        font-size:36px;
+    
+    }
+    
+    .menu-subtitle{
+    
+        font-size:15px;
+    
+        line-height:1.7;
+    
+    }
+    
+    .menu-filter-box{
+    
+        padding:20px;
+    
+        gap:18px;
+    
+    }
+    
+    .menu-filter-title{
+    
+        font-size:20px;
+    
+    }
+    
+    .menu-filter-icon{
+    
+        width:35px;
+    
+        height:35px;
+    
+    }
+    
+    .menu-select{
+    
+        width:100%;
+    
+        min-width:100%;
+    
+        height:54px;
+    
+    }
+    
+    .menu-grid{
+    
+        gap:28px;
+    
+    }
+    
+    .menu-card-image{
+    
+        height:230px;
+    
+    }
+    
+    .menu-card-content{
+    
+        padding:22px;
+    
+    }
+    
+    .menu-card-title{
+    
+        font-size:26px;
+    
+    }
+    
+    .menu-card-description{
+    
+        font-size:14px;
+    
+    }
+    
+    .menu-card-price{
+    
+        font-size:22px;
+    
+        padding:10px 18px;
+    
+    }
+    
+    .menu-card-btn{
+    
+        padding:12px 22px;
+    
+        font-size:14px;
+    
+    }
+    
+    }
+    
+    
+    
+    @media (max-width:576px){
+    
+    .menu-main{
+    
+        margin-top:115px;
+    
+    }
+    
+    .menu-hero{
+    
+        padding:45px 18px;
+    
+    }
+    
+    .menu-title{
+    
+        font-size:30px;
+    
+    }
+    
+    .menu-subtitle{
+    
+        font-size:14px;
+    
+    }
+    
+    .menu-filter-box{
+    
+        border-radius:22px;
+    
+    }
+    
+    .menu-grid{
+    
+        grid-template-columns:1fr;
+    
+    }
+    
+    .menu-card{
+    
+        border-radius:22px;
+    
+    }
+    
+    .menu-card-image{
+    
+        height:210px;
+    
+    }
+    
+    .menu-card-content{
+    
+        padding:20px;
+    
+    }
+    
+    .menu-card-title{
+    
+        font-size:24px;
+    
+    }
+    
+    .menu-card-bottom{
+    
+        flex-direction:column;
+    
+        align-items:flex-start;
+    
+        gap:15px;
+    
+    }
+    
+    .menu-card-price{
+    
+        width:100%;
+    
+        text-align:center;
+    
+    }
+    
+    .menu-card-btn{
+    
+        width:100%;
+    
+    }
+    
+    .menu-card-tag{
+    
+        font-size:12px;
+    
+        padding:7px 14px;
+    
+    }
+    
+    .menu-card-favourite{
+    
+        width:42px;
+    
+        height:42px;
+    
+        font-size:18px;
+    
+    }
+    
+    }
+    
+    
+    
+    @media (max-width:420px){
+    
+    .menu-title{
+    
+        font-size:27px;
+    
+    }
+    
+    .menu-filter-title{
+    
+        font-size:18px;
+    
+    }
+    
+    .menu-card-title{
+    
+        font-size:22px;
+    
+    }
+    
+    .menu-card-rating{
+    
+        font-size:13px;
+    
+    }
+    
+    .menu-card-description{
+    
+        line-height:1.6;
+    
+    }
+    
+    }
+    
+    
+    
+    /*==================================================
+                MICRO ANIMATIONS
+    ==================================================*/
+    
+    .menu-card{
+    
+        animation:fadeUp .8s both;
+    
+    }
+    
+    .menu-card:nth-child(2){
+    
+        animation-delay:.12s;
+    
+    }
+    
+    .menu-card:nth-child(3){
+    
+        animation-delay:.24s;
+    
+    }
+    
+    .menu-card:nth-child(4){
+    
+        animation-delay:.36s;
+    
+    }
+    
+    .menu-card:nth-child(5){
+    
+        animation-delay:.48s;
+    
+    }
+    
+    .menu-card:nth-child(6){
+    
+        animation-delay:.60s;
+    
+    }
+    
+    
+    
+    /*==================================================
+                PREMIUM HOVER EFFECTS
+    ==================================================*/
+    
+    .menu-card:hover{
+    
+        border-color:rgba(212,175,55,.35);
+    
+    }
+    
+    .menu-card:hover .menu-card-rating{
+    
+        transform:translateY(-3px);
+    
+        box-shadow:
+        0 10px 20px rgba(212,175,55,.25);
+    
+    }
+    
+    .menu-card:hover .menu-card-tag{
+    
+        transform:scale(1.05);
+    
+    }
+    
+    .menu-card:hover .menu-card-description{
+    
+        color:var(--coffee-dark);
+    
+    }
+    
+    
+    
+    /*==================================================
+                SMOOTH TRANSITIONS
+    ==================================================*/
+    
+    .menu-card-rating,
+    .menu-card-tag,
+    .menu-card-description,
+    .menu-card-bottom{
+    
+        transition:var(--transition);
+    
+    }
+    
+    
+    
+    /*==================================================
+                EMPTY STATE (OPTIONAL)
+    ==================================================*/
+    
+    .menu-empty{
+    
+        display:flex;
+    
+        flex-direction:column;
+    
+        justify-content:center;
+    
+        align-items:center;
+    
+        gap:20px;
+    
+        min-height:350px;
+    
+        border-radius:30px;
+    
+        background:rgba(255,255,255,.45);
+    
+        backdrop-filter:blur(18px);
+    
+        border:2px dashed rgba(92,64,51,.18);
+    
+        text-align:center;
+    
+    }
+    
+    .menu-empty img{
+    
+        width:130px;
+    
+        opacity:.8;
+    
+    }
+    
+    .menu-empty h2{
+    
+        color:var(--coffee-dark);
+    
+        font-family:"Playfair Display",serif;
+    
+        font-size:32px;
+    
+    }
+    
+    .menu-empty p{
+    
+        color:#6c5b51;
+    
+        max-width:420px;
+    
+        line-height:1.8;
+    
+    }
+    
+    
+    
+    /*==================================================
+                LOADING CARD
+    ==================================================*/
+    
+    .menu-loading{
+    
+        height:420px;
+    
+        border-radius:28px;
+    
+        background:
+    
+        linear-gradient(
+            90deg,
+            #ececec 25%,
+            #f7f7f7 50%,
+            #ececec 75%
+        );
+    
+        background-size:300% 100%;
+    
+        animation:loading 1.2s infinite linear;
+    
+    }
+    
+    @keyframes loading{
+    
+    0%{
+    
+    background-position:100% 0;
+    
+    }
+    
+    100%{
+    
+    background-position:-100% 0;
+    
+    }
+    
+    }
+
+
+
+
+
+

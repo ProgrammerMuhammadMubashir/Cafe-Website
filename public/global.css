@@ -1,0 +1,866 @@
+/*==================================================
+                GOOGLE FONTS
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Dancing+Script:wght@700&display=swap');
+
+
+/*==================================================
+                CSS VARIABLES
+==================================================*/
+
+:root{
+
+    --coffee-dark:#2B1D18;
+    --coffee:#5C4033;
+    --coffee-light:#8B5E3C;
+
+    --gold:#D4AF37;
+    --gold-light:#F3D978;
+
+    --cream:#F9F6F1;
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,.12);
+    --glass-border:rgba(255,255,255,.20);
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.12),
+    0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-hover:
+    0 20px 45px rgba(0,0,0,.18);
+
+    --transition:.35s ease;
+
+}
+
+
+
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:
+    linear-gradient(
+    180deg,
+    #fbf8f5,
+    #f5ede5);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+input,
+select,
+textarea{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+/*==================================================
+                SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#efe6dc;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--coffee);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--coffee-dark);
+
+}
+
+
+
+/*==================================================
+                UTILITIES
+==================================================*/
+
+.displaynone{
+
+    display:none !important;
+
+}
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+.glass-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.primary-btn{
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light));
+
+    color:#2B1D18;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 15px 35px rgba(212,175,55,.35);
+
+}
+
+
+
+/*==================================================
+                HEADER
+==================================================*/
+
+.global-header{
+
+    position:fixed;
+
+    top:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1200px,92%);
+
+    z-index:999;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.global-header:hover{
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.global-header-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:82px;
+
+    padding:0 35px;
+
+}
+
+
+
+/*==================================================
+                LOGO
+==================================================*/
+
+.global-logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.global-logo{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    transition:.5s;
+
+}
+
+.global-logo:hover{
+
+    transform:rotate(360deg);
+
+}
+
+.global-logo-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:30px;
+
+    color:var(--coffee-light);
+
+    font-weight:700;
+
+}
+
+
+
+/*==================================================
+                NAVBAR
+==================================================*/
+
+.global-navbar{
+
+    display:flex;
+
+}
+
+.global-nav-list{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+.global-nav-link{
+
+    position:relative;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    color:var(--coffee-dark);
+
+    transition:var(--transition);
+
+}
+
+.global-nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:var(--transition);
+
+}
+
+.global-nav-link:hover{
+
+    color:var(--gold);
+
+}
+
+.global-nav-link:hover::after{
+
+    width:100%;
+
+}
+
+
+
+/*==================================================
+                MENU ICON
+==================================================*/
+
+.global-menu-icon{
+
+    width:40px;
+
+    display:none;
+
+    cursor:pointer;
+
+}
+
+
+
+/*==================================================
+            MOBILE NAVIGATION
+==================================================*/
+
+.global-mobile-nav{
+
+    display:none;
+
+}
+
+.global-mobile-nav-list{
+
+    list-style:none;
+
+}
+/*==================================================
+                FOOTER
+==================================================*/
+
+.global-footer{
+
+    margin-top:120px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--coffee-dark),
+    var(--coffee));
+
+    color:var(--white);
+
+}
+
+.global-footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+    rgba(255,255,255,.08),
+
+    transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+.global-footer-container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    min-height:110px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.global-footer-text{
+
+    font-size:15px;
+
+    letter-spacing:.5px;
+
+    opacity:.9;
+
+}
+
+.global-admin-btn{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:24px;
+
+    transition:var(--transition);
+
+}
+
+.global-admin-btn:hover{
+
+    transform:rotate(180deg) scale(1.1);
+
+    background:var(--gold);
+
+    color:var(--coffee-dark);
+
+}
+
+
+
+/*==================================================
+                COMMON ANIMATIONS
+==================================================*/
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+@keyframes fadeLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+
+@keyframes fadeRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+@keyframes shine{
+
+0%{
+
+left:-120%;
+
+}
+
+100%{
+
+left:130%;
+
+}
+
+}
+
+
+
+/*==================================================
+                COMMON HELPERS
+==================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.grid-center{
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.shadow-hover{
+
+    transition:var(--transition);
+
+}
+
+.shadow-hover:hover{
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+
+/*==================================================
+                SELECTION
+==================================================*/
+
+::selection{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.global-navbar{
+
+display:none;
+
+}
+
+.global-menu-icon{
+
+display:block;
+
+width:38px;
+
+}
+
+.global-mobile-nav{
+
+display:flex;
+
+justify-content:center;
+
+padding:25px;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(20px);
+
+border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+.global-mobile-nav-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+width:100%;
+
+text-align:center;
+
+}
+
+.global-mobile-nav-list a{
+
+font-size:18px;
+
+font-weight:600;
+
+color:var(--coffee-dark);
+
+transition:.3s;
+
+}
+
+.global-mobile-nav-list a:hover{
+
+color:var(--gold);
+
+}
+
+}
+
+
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.global-header{
+
+top:10px;
+
+width:95%;
+
+}
+
+.global-header-container{
+
+padding:0 20px;
+
+height:75px;
+
+}
+
+.global-logo{
+
+width:48px;
+
+height:48px;
+
+}
+
+.global-logo-title{
+
+font-size:23px;
+
+}
+
+.global-footer-container{
+
+flex-direction:column;
+
+justify-content:center;
+
+gap:18px;
+
+padding:25px 0;
+
+text-align:center;
+
+}
+
+}
+
+
+
+/*==================================================
+            EXTRA SMALL
+==================================================*/
+
+@media(max-width:480px){
+
+.global-logo-title{
+
+font-size:20px;
+
+}
+
+.global-header-container{
+
+padding:0 15px;
+
+}
+
+.global-footer-text{
+
+font-size:14px;
+
+}
+
+.global-admin-btn{
+
+width:50px;
+
+height:50px;
+
+}
+
+}
+
+
+
+/*==================================================
+            GLOBAL TRANSITIONS
+==================================================*/
+
+.global-header,
+.global-logo,
+.global-nav-link,
+.global-admin-btn,
+.primary-btn,
+.glass-card{
+
+transition:var(--transition);
+
+}

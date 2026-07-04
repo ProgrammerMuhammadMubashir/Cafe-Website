@@ -4,121 +4,430 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Reservation System</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="onlinereservation.css">
 </head>
 <body>
-  <header id="headerofindex">
-    <div id="toleft">
-        <img src="resources/icon.png" alt="iconofcafe" width="10%" style="border-radius: 50%; width: 42px;">
-        <h1 id="mainheading">Mubashir Café</h1>
-    </div>
-    <img src="resources/menuicon.webp" alt="" id="menu-icon">
-   
-    <nav  id="navofindex">
-    <ul>
-<a href="/mainpage"><li>Home</li></a>
-<a href="/menu"> <li>Menu</li></a>
-<a href="/onlinereservation"><li>Online reservation</li></a>
-<a href="/contactus"> <li>Contact us</li></a>
-</ul>
-</nav>
-<div id="navofindexmobile" class="displaynone">
-  
-    <ul class="navofindexmobile-ul">
-<a href="/mainpage"><li>Home</li></a>
-<a href="/menu"> <li>Menu</li></a>
-<a href="/onlinereservation"><li>Online reservation</li></a>
-<a href="/contactus"> <li>Contact us</li></a>
-</ul>  
-    
-</div>
-</header>
-    <main>
-        <h2 style="color: var(--primarycolor--);font-family: var(--primaryfont--); text-align: center; margin: 20px 0px;">Online Reservation System</h2>
-    
-    <div id="main-form-reservation-container">
-        <form action="/onlinereservation" method="post" id="main-form-reservation">
-          <span id="msgaboutre"><%= msg %></span>
-            <div>
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-              </div>
-            
-              <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-              </div>
-            
-              <div>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone"placeholder="e.g., 1234567890" required>
-              </div>
-            
-              <div>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" placeholder="Select a date" required>
-              </div>
-            
-              <div>
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" placeholder="Select a time" required>
-              </div>
-            
-              <div>
-                <label for="duration">Duration (in hours):</label>
-                <input type="number" id="duration" name="duration" min="1" max="5" placeholder="Enter duration (1-5 hrs)" required>
-              </div>
-            
-              <div>
-                <label for="numberOfGuests">Number of Guests:</label>
-                <input type="number" id="numberOfGuests" name="numberOfGuests" min="1" max="20" placeholder="Enter total guests (e.g., 2)" required>
-              </div>
-            
-              <div>
-                 <span>Choose the sitting plan</span>
-                 <div  id="all-sittingplans">
-                   <div>
-  <label>
-    <input type="radio" name="seatingPlan" value="tableandchair" id="tableandchairoption" required>
-    Traditional
-  </label>
-  <img src="resources/table-and-chair.jpg" alt="tableandchairsitting" class="sitting-plan-img" id="tableandchairimg">
-</div>
+   <!-- ==================================================
+                        HEADER
+    =================================================== -->
 
-<div>
-  <label>
-    <input type="radio" name="seatingPlan" value="communal" required id="communaloption">
-    Communal
-  </label>
-  <img src="resources/communal.jpg" alt="Communalsitting" class="sitting-plan-img" id="communalimg">
+    <header class="global-header">
 
-</div>
+      <div class="global-header-container">
 
-<div>
-  <label>
-    <input type="radio" name="seatingPlan" value="booth" required id="boothoption">
-    Booth
-  </label>
-  <img src="resources/booth.jpg" alt="Boothsitting" class="sitting-plan-img" id="boothimg">
-</div>
-</div>
-                
-                 
+          <div class="global-logo-area">
+
+              <img src="resources/icon.png"
+                   alt="Mubashir Café Logo"
+                   class="global-logo">
+
+              <h1 class="global-logo-title">
+                  Mubashir Café
+              </h1>
+
+          </div>
+
+          <img src="resources/menuicon.webp"
+               alt="Menu"
+               id="menu-icon"
+               class="global-menu-icon">
+
+          <nav class="global-navbar" id="navofindex">
+
+              <ul class="global-nav-list">
+
+                  <li><a href="/mainpage" class="global-nav-link">Home</a></li>
+
+                  <li><a href="/menu" class="global-nav-link">Menu</a></li>
+
+                  <li><a href="/onlinereservation" class="global-nav-link">Reservation</a></li>
+
+                  <li><a href="/contactus" class="global-nav-link">Contact</a></li>
+
+              </ul>
+
+          </nav>
+
+      </div>
+
+      <!-- Mobile Navigation -->
+
+      <div id="navofindexmobile"
+           class="displaynone global-mobile-nav">
+
+          <ul class="global-mobile-nav-list">
+
+              <li><a href="/mainpage">Home</a></li>
+
+              <li><a href="/menu">Menu</a></li>
+
+              <li><a href="/onlinereservation">Reservation</a></li>
+
+              <li><a href="/contactus">Contact</a></li>
+
+          </ul>
+
+      </div>
+
+  </header>
+
+
+   <!-- ================= MAIN ================= -->
+
+<main class="res-main">
+
+  <section class="res-hero">
+
+      <h1 class="res-title">
+          Reserve Your Table
+      </h1>
+
+      <p class="res-subtitle">
+
+          Reserve your perfect spot and let us prepare an unforgettable
+          dining experience filled with premium coffee, delicious meals,
+          and exceptional hospitality.
+
+      </p>
+
+  </section>
+
+
+
+  <section class="res-form-wrapper">
+
+      <form action="/onlinereservation"
+            method="post"
+            class="res-form">
+
+          <div class="res-message">
+              <%= msg %>
+          </div>
+
+
+
+          <!-- FULL NAME -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="fullName">
+                  Full Name
+              </label>
+
+              <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="res-input"
+                  placeholder="Enter your full name"
+                  required>
+
+          </div>
+
+
+
+          <!-- EMAIL -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="email">
+                  Email
+              </label>
+
+              <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="res-input"
+                  placeholder="Enter your email"
+                  required>
+
+          </div>
+
+
+
+          <!-- PHONE -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="phone">
+                  Phone Number
+              </label>
+
+              <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="res-input"
+                  placeholder="03XXXXXXXXX"
+                  required>
+
+          </div>
+
+
+
+          <!-- DATE -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="date">
+                  Reservation Date
+              </label>
+
+              <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  class="res-input"
+                  required>
+
+          </div>
+
+
+
+          <!-- TIME -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="time">
+                  Reservation Time
+              </label>
+
+              <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  class="res-input"
+                  required>
+
+          </div>
+
+
+
+          <!-- DURATION -->
+
+          <div class="res-group">
+
+              <label class="res-label" for="duration">
+                  Duration
+              </label>
+
+              <input
+                  type="number"
+                  id="duration"
+                  name="duration"
+                  min="1"
+                  max="5"
+                  class="res-input"
+                  placeholder="1 - 5 Hours"
+                  required>
+
+          </div>
+
+
+
+          <!-- GUESTS -->
+
+          <div class="res-group res-group-full">
+
+              <label class="res-label" for="numberOfGuests">
+                  Number Of Guests
+              </label>
+
+              <input
+                  type="number"
+                  id="numberOfGuests"
+                  name="numberOfGuests"
+                  min="1"
+                  max="20"
+                  class="res-input"
+                  placeholder="How many guests?"
+                  required>
+
+          </div>
+             <!-- ================= SEATING PLANS ================= -->
+
+             <div class="res-group res-group-full">
+
+              <span class="res-seating-title">
+
+                  Choose Your Seating Experience
+
+              </span>
+
+              <div class="res-seating-container">
+
+                  <!-- Traditional -->
+
+                  <label class="res-seat-card">
+
+                      <input
+                          type="radio"
+                          name="seatingPlan"
+                          value="tableandchair"
+                          required>
+
+                      <span class="res-seat-check">
+                          ✓
+                      </span>
+
+                      <img
+                          src="resources/table-and-chair.jpg"
+                          alt="Traditional Seating"
+                          class="res-seat-image">
+
+                      <div class="res-seat-info">
+
+                          <h3 class="res-seat-name">
+
+                              Traditional
+
+                          </h3>
+
+                          <p class="res-seat-description">
+
+                              Elegant tables and comfortable chairs,
+                              perfect for families, friends and business
+                              meetings.
+
+                          </p>
+
+                      </div>
+
+                  </label>
+
+
+
+                  <!-- Communal -->
+
+                  <label class="res-seat-card">
+
+                      <input
+                          type="radio"
+                          name="seatingPlan"
+                          value="communal"
+                          required>
+
+                      <span class="res-seat-check">
+                          ✓
+                      </span>
+
+                      <img
+                          src="resources/communal.jpg"
+                          alt="Communal Seating"
+                          class="res-seat-image">
+
+                      <div class="res-seat-info">
+
+                          <h3 class="res-seat-name">
+
+                              Communal
+
+                          </h3>
+
+                          <p class="res-seat-description">
+
+                              Meet new people while enjoying our lively
+                              café atmosphere around a shared table.
+
+                          </p>
+
+                      </div>
+
+                  </label>
+
+
+
+                  <!-- Booth -->
+
+                  <label class="res-seat-card">
+
+                      <input
+                          type="radio"
+                          name="seatingPlan"
+                          value="booth"
+                          required>
+
+                      <span class="res-seat-check">
+                          ✓
+                      </span>
+
+                      <img
+                          src="resources/booth.jpg"
+                          alt="Booth Seating"
+                          class="res-seat-image">
+
+                      <div class="res-seat-info">
+
+                          <h3 class="res-seat-name">
+
+                              Private Booth
+
+                          </h3>
+
+                          <p class="res-seat-description">
+
+                              Cozy semi-private booths designed for
+                              couples, celebrations and peaceful dining.
+
+                          </p>
+
+                      </div>
+
+                  </label>
+
               </div>
-             
-              <div>
-                <button type="submit" id="form-sumbit-btn">Reserve Now</button>
-              </div>       
 
-        </form>
-       
-    </div>
-    
-    </main>
-    <footer>
-        <span> &copy; All rights reserved to MuhammadMubashir</span>
-    </footer>
+          </div>
+
+
+
+          <!-- ================= SUBMIT ================= -->
+
+          <div class="res-submit-wrapper">
+
+              <button
+                  type="submit"
+                  class="res-submit-btn">
+
+                  Reserve Now →
+
+              </button>
+
+          </div>
+
+      </form>
+
+  </section>
+
+</main>
+
+    <!-- ==================================================
+                        FOOTER
+    =================================================== -->
+
+    <footer class="global-footer">
+
+      <div class="global-footer-container">
+
+          <p class="global-footer-text">
+
+              © 2026 Mubashir Café. Crafted with passion by Muhammad Mubashir.
+
+          </p>
+
+          <a href="/adminlogin"
+             class="global-admin-btn"
+             title="Admin Login">
+
+              ⚙
+
+          </a>
+
+      </div>
+
+  </footer>
     <script src="onlinereservation.js"></script>
 </body>
 </html>

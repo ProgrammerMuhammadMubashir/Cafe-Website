@@ -1,87 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us</title>
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-    
+
+    <title>Mubashir Café | Contact Us</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <link rel="stylesheet" href="contactus.css">
+
 </head>
+
 <body>
-    <header id="headerofindex">
-        <div id="toleft">
-            <img src="resources/icon.png" alt="iconofcafe" width="10%" style="border-radius: 50%; width: 42px;">
-            <h1 id="mainheading">Mubashir Café</h1>
+
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="global-header">
+
+    <div class="global-header-container">
+
+        <div class="global-logo-area">
+
+            <img src="resources/icon.png"
+                 alt="Mubashir Café Logo"
+                 class="global-logo">
+
+            <h1 class="global-logo-title">
+
+                Mubashir Café
+
+            </h1>
+
         </div>
-        <img src="resources/menuicon.webp" alt="" id="menu-icon">
-       
-        <nav  id="navofindex">
-        <ul>
-    <a href="/mainpage"><li>Home</li></a>
-    <a href="/menu"> <li>Menu</li></a>
-    <a href="/onlinereservation"><li>Online reservation</li></a>
-    <a href="/contactus"> <li>Contact us</li></a>
-</ul>
-</nav>
-<div id="navofindexmobile" class="displaynone">
-      
-        <ul class="navofindexmobile-ul">
-    <a href="/mainpage"><li>Home</li></a>
-    <a href="/menu"> <li>Menu</li></a>
-    <a href="/onlinereservation"><li>Online reservation</li></a>
-    <a href="/contactus"> <li>Contact us</li></a>
-</ul>  
-        
+
+        <img src="resources/menuicon.webp"
+             alt="Menu"
+             id="menu-icon"
+             class="global-menu-icon">
+
+        <nav class="global-navbar" id="navofindex">
+
+            <ul class="global-nav-list">
+
+                <li><a href="/mainpage" class="global-nav-link">Home</a></li>
+
+                <li><a href="/menu" class="global-nav-link">Menu</a></li>
+
+                <li><a href="/onlinereservation" class="global-nav-link">Reservation</a></li>
+
+                <li><a href="/contactus" class="global-nav-link">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+    <div id="navofindexmobile"
+         class="displaynone global-mobile-nav">
+
+        <ul class="global-mobile-nav-list">
+
+            <li><a href="/mainpage">Home</a></li>
+
+            <li><a href="/menu">Menu</a></li>
+
+            <li><a href="/onlinereservation">Reservation</a></li>
+
+            <li><a href="/contactus">Contact</a></li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="contact-main">
+
+
+
+
+<section class="contact-hero">
+
+    <h1 class="contact-title">
+
+        We'd Love To Hear From You
+
+    </h1>
+
+    <p class="contact-subtitle">
+
+        Every suggestion, compliment and idea helps us create
+        an even better café experience for everyone.
+
+    </p>
+
+</section>
+
+
+
+
+<section class="contact-feedback-section">
+
+
+
+
+<div class="contact-image-card">
+
+    <img src="resources/slide1.webp"
+         alt="Cafe Interior"
+         id="slide1"
+         class="contact-slider-image">
+
 </div>
-    </header>
-<main>
-    <div id="imgcontainerpluscontactform-container">
-        <div id="imgcontainer">
-        <img src="resources/slide1.webp" alt="" id="slide1">
-       
+
+
+
+
+<div class="contact-form-card">
+
+    <h2 class="contact-form-title">
+
+        Send Your Feedback
+
+    </h2>
+
+    <p class="contact-form-subtitle">
+
+        We read every message personally.
+
+    </p>
+
+
+
+    <form action="/contactus"
+          method="post"
+          class="contact-form">
+
+        <label
+        for="feedbackName"
+        class="contact-label">
+
+            Your Name
+
+        </label>
+
+        <input
+
+            type="text"
+
+            id="feedbackName"
+
+            name="feedbackName"
+
+            class="contact-input"
+
+            placeholder="Enter your name"
+
+            required>
+
+
+
+
+        <label
+        for="feedbackMessage"
+        class="contact-label">
+
+            Your Feedback
+
+        </label>
+
+        <textarea
+
+            id="feedbackMessage"
+
+            name="feedbackMessage"
+
+            class="contact-textarea"
+
+            placeholder="Share your thoughts with us..."
+
+            required>
+
+        </textarea>
+
+
+
+        <div class="contact-message">
+
+            <%= msg %>
+
         </div>
-        <h2 style="color: var(--primarycolor--);font-family: var(--writingsfont--); margin: 10px; " class="contactus-line">Your experience matters to us deeply – your feedback shapes the soul of what we create</h2>
-        <form method="post" action="/contactus"  id="contactus-form">
-                    <label for="feedbackName">Your Name:</label>
-                    <input type="text" id="feedbackName" name="feedbackName" placeholder="Enter your name" required>
-                  
-                    <label for="feedbackMessage">Your Feedback:</label>
-                    <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Write your feedback here..." rows="10" cols="10" required></textarea>
-                 <span id="msgaboutfeedback"> <%= msg %> </span> 
-                    <button type="submit">Submit Feedback</button>
-                  </form>
-    </div>
-    <div id="statistics-container">
-<p id="numberofbranches">0</p>
-<p id="customersperday">0</p>
-<p id="feedbackstats">0</p>
+
+        <button
+            type="submit"
+            class="contact-submit-btn">
+
+            Submit Feedback →
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+<!-- ================= STATISTICS ================= -->
+
+<section class="contact-stats">
+
+    <div class="contact-stat-card">
+
+        <div class="contact-stat-number"
+             id="numberofbranches">
+
+            0
+
+        </div>
+
+        <p class="contact-stat-title">
+
+            Branches
+
+        </p>
+
     </div>
 
-  <center>  <div id="lastpara-container">
-        <span id="comma-start">❝ Thank you</span><p> for being a part of our journey and allowing us to share our passion with you. Our café is more than just a place to grab a coffee or a meal—it’s a community built on warmth, care, and connection. We take pride in using the finest ingredients, crafting every cup and dish with attention to detail and love, ensuring you experience the best of what we have to offer. Our mission is to create a space where everyone feels at home, whether you're here to work, relax, or enjoy meaningful moments with loved ones.  
 
-    At the heart of what we do is a commitment to quality, from the rich aroma of our freshly brewed coffee to the inviting atmosphere that soothes your mind and soul. We aim to be a place where inspiration is sparked, conversations flow effortlessly, and memories are made to last.  
-    
-    As you reach the end of your visit today, we want you to know how much we value your support. Your presence motivates us to continually improve and ensure every visit is as delightful as the last. We hope our café has added a touch of joy to your day, and we can’t wait to welcome you back for more moments of comfort, flavor, and happiness. Until next time, take care and carry the warmth of our café with you!</p><span id="comma-end">❞</span>
-    <span id="ownername">MuhammadMubashir</span>
-</center>
-    </div>
-    <!-- <img src="resources/ownerpic.jpg" alt="" id="ownerpic"> -->
 
-    <h3 style="color: var(--primarycolor--);font-family: var(--writingsfont--); margin: 10px 5px; ">Know more about us:</h3>
-    <div  id="socialmedialinks-container">
-        <img src="resources/facebookicon.webp" alt="" >
-        <img src="resources/twittericon.png" alt="" >
-        <img src="resources/meta-x.webp" alt="" >
-        <img src="resources/linkedinicon.webp" alt="" >
-        <img src="resources/gmailicon.webp" alt="" >
+    <div class="contact-stat-card">
+
+        <div class="contact-stat-number"
+             id="customersperday">
+
+            0
+
+        </div>
+
+        <p class="contact-stat-title">
+
+            Happy Customers / Day
+
+        </p>
+
     </div>
+
+
+
+    <div class="contact-stat-card">
+
+        <div class="contact-stat-number"
+             id="feedbackstats">
+
+            0
+
+        </div>
+
+        <p class="contact-stat-title">
+
+            Positive Reviews
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= OWNER MESSAGE ================= -->
+
+<section class="contact-message-section">
+
+    <div class="contact-message-card">
+
+        <span class="contact-quote-start">
+
+            ❝
+
+        </span>
+
+        <h2 class="contact-message-heading">
+
+            Thank You For Being Part Of Our Journey
+
+        </h2>
+
+        <p class="contact-owner-message">
+
+            Our café is much more than a place to enjoy coffee—it is a place
+            built around warmth, friendships, meaningful conversations and
+            unforgettable experiences.
+
+            Every cup is carefully prepared using premium ingredients, every
+            meal is crafted with passion, and every visitor becomes part of
+            our growing family.
+
+            Whether you visit us to work, relax, celebrate or simply enjoy
+            your favourite drink, our mission remains the same: to make every
+            visit memorable.
+
+            Your encouragement inspires us to improve every single day.
+            Thank you for choosing Mubashir Café and allowing us to serve you.
+            We look forward to welcoming you again soon.
+
+        </p>
+
+        <span class="contact-owner-name">
+
+            — Muhammad Mubashir
+
+        </span>
+
+        <span class="contact-quote-end">
+
+            ❞
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= SOCIAL ================= -->
+
+<section class="contact-social-section">
+
+    <h2 class="contact-social-title">
+
+        Connect With Us
+
+    </h2>
+
+    <div class="contact-social-grid">
+
+        <a href="#"
+           class="contact-social-card">
+
+            <img src="resources/facebookicon.webp"
+                 alt="Facebook">
+
+            <span>Facebook</span>
+
+        </a>
+
+
+
+        <a href="#"
+           class="contact-social-card">
+
+            <img src="resources/twittericon.png"
+                 alt="Twitter">
+
+            <span>Twitter</span>
+
+        </a>
+
+
+
+        <a href="#"
+           class="contact-social-card">
+
+            <img src="resources/meta-x.webp"
+                 alt="X">
+
+            <span>X</span>
+
+        </a>
+
+
+
+        <a href="#"
+           class="contact-social-card">
+
+            <img src="resources/linkedinicon.webp"
+                 alt="LinkedIn">
+
+            <span>LinkedIn</span>
+
+        </a>
+
+
+
+        <a href="#"
+           class="contact-social-card">
+
+            <img src="resources/gmailicon.webp"
+                 alt="Email">
+
+            <span>Email</span>
+
+        </a>
+
+    </div>
+
+</section>
+
 </main>
-<footer>
-    <span> &copy; All rights reserved to MuhammadMubashir</span>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="global-footer">
+
+    <div class="global-footer-container">
+
+        <p class="global-footer-text">
+
+            © 2026 Mubashir Café. Crafted with passion by Muhammad Mubashir.
+
+        </p>
+
+        <a href="/adminlogin"
+           title="Admin Login"
+           class="global-admin-btn">
+
+            ⚙
+
+        </a>
+
+    </div>
+
 </footer>
+
 <script src="contactus.js"></script>
-    </body>
+
+</body>
 </html>

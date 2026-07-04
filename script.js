@@ -1,7 +1,7 @@
 import express from "express"
-export const app=express()
+const app=express()
 import dotenv from "dotenv";
-// dotenv.config()
+dotenv.config()
 const port= process.env.PORT || 3000
 import basicroute from "./routes/basic.js"
 import onlinereservationroute from "./routes/onlinereservation.js"
@@ -42,4 +42,6 @@ app.get(["/mainpage", "/"],(req,res)=>{
   res.render("index.ejs")
   })
 
-export default app;
+app.listen(port,()=>{
+  console.log("Project is listening at 3000")
+})

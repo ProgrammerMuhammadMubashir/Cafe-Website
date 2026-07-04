@@ -1,89 +1,195 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <title>Our Menu | Mubashir Café</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
+
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="menu.css">
+
 <body>
-    <header id="headerofindex">
-        <div id="toleft">
-            <img src="resources/icon.png" alt="iconofcafe" width="10%" style="border-radius: 50%; width: 42px;">
-            <h1 id="mainheading">Mubashir Café</h1>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="global-header">
+
+        <div class="global-header-container">
+
+            <div class="global-logo-area">
+
+                <img src="resources/icon.png"
+                     alt="Mubashir Café Logo"
+                     class="global-logo">
+
+                <h1 class="global-logo-title">
+                    Mubashir Café
+                </h1>
+
+            </div>
+
+            <img src="resources/menuicon.webp"
+                 alt="Menu"
+                 id="menu-icon"
+                 class="global-menu-icon">
+
+            <nav class="global-navbar" id="navofindex">
+
+                <ul class="global-nav-list">
+
+                    <li><a href="/mainpage" class="global-nav-link">Home</a></li>
+                    <li><a href="/menu" class="global-nav-link">Menu</a></li>
+                    <li><a href="/onlinereservation" class="global-nav-link">Reservation</a></li>
+                    <li><a href="/contactus" class="global-nav-link">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
         </div>
-        <img src="resources/menuicon.webp" alt="" id="menu-icon">
-       
-        <nav  id="navofindex">
-        <ul>
-    <a href="/mainpage"><li>Home</li></a>
-    <a href="/menu"> <li>Menu</li></a>
-    <a href="/onlinereservation"><li>Online reservation</li></a>
-    <a href="/contactus"> <li>Contact us</li></a>
-</ul>
-</nav>
-<div id="navofindexmobile" class="displaynone">
-      
-        <ul class="navofindexmobile-ul">
-    <a href="/mainpage"><li>Home</li></a>
-    <a href="/menu"> <li>Menu</li></a>
-    <a href="/onlinereservation"><li>Online reservation</li></a>
-    <a href="/contactus"> <li>Contact us</li></a>
-</ul>  
-        
-</div>
+
+        <!-- Mobile Navigation -->
+
+        <div id="navofindexmobile" class="displaynone global-mobile-nav">
+
+            <ul class="global-mobile-nav-list">
+
+                <li><a href="/mainpage">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/onlinereservation">Reservation</a></li>
+                <li><a href="/contactus">Contact</a></li>
+
+            </ul>
+
+        </div>
+
     </header>
 
-    <main>
-        <h2 style="color: var(--primarycolor--);font-family: var(--primaryfont--); margin-top: 10px; text-align: center; ">Our Delicious Menu Items</h2>
 
-        <div id="filters-container">
-<span id="filterspan"><img src="resources/filterpic.png" id="filterpic">Fliters</span>
+    <!-- ================= MAIN ================= -->
 
-<select name="mealType" id="mealType">
-    <option value="" disabled selected>Select Meal Type</option>
-    <option value="breakfast">Breakfast</option>
-    <option value="lunch">Lunch</option>
-    <option value="healthyfood">Dinner</option>
-  </select>
-  
-  <select name="foodType" id="foodType">
-    <option value="" disabled selected>Select Food Type</option>
-    <option value="Pancakes">Pancakes</option>
-<option value="Oatmeal">Oatmeal</option>
-<option value="Toast">Toast</option>
-<option value="Burrito">Burrito</option>
-<option value="Smoothie">Smoothie</option>
-<option value="Salad">Salad</option>
-<option value="Sushi">Sushi</option>
-<option value="Soup">Soup</option>
-<option value="Burger">Burger</option>
-<option value="Sandwich">Sandwich</option>
-<option value="Pizza">Pizza</option>
-<option value="Steak">Steak</option>
-<option value="Curry">Curry</option>
-<option value="Pasta">Pasta</option>
-<option value="Tacos">Tacos</option>
+    <main class="menu-main">
 
- 
-  </select>
-  
-  
-  
-        </div>
+        <!-- Hero -->
 
-    
-        <div id="alldeals">
-            
+        <section class="menu-hero">
+
+            <h1 class="menu-title">
+                Explore Our Premium Menu
+            </h1>
+
+            <p class="menu-subtitle">
+                Crafted with fresh ingredients, brewed with passion, and served with love.
+            </p>
+
+        </section>
 
 
-        </div>
+        <!-- Filters -->
+
+        <section class="menu-filter-section">
+
+            <div id="filters-container" class="menu-filter-box">
+
+                <div class="menu-filter-heading">
+
+                    <img src="resources/filterpic.png"
+                         alt="Filter"
+                         class="menu-filter-icon">
+
+                    <span class="menu-filter-title">
+                        Filter Menu
+                    </span>
+
+                </div>
+
+
+                <select name="mealType" id="mealType" class="menu-select">
+
+                    <option value="" disabled selected>Select Meal</option>
+
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="healthyfood">Dinner</option>
+
+                </select>
+
+
+                <select name="foodType" id="foodType" class="menu-select">
+
+                    <option value="" disabled selected>Select Food</option>
+
+                    <option value="Pancakes">Pancakes</option>
+                    <option value="Oatmeal">Oatmeal</option>
+                    <option value="Toast">Toast</option>
+                    <option value="Burrito">Burrito</option>
+                    <option value="Smoothie">Smoothie</option>
+                    <option value="Salad">Salad</option>
+                    <option value="Sushi">Sushi</option>
+                    <option value="Soup">Soup</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Sandwich">Sandwich</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Steak">Steak</option>
+                    <option value="Curry">Curry</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Tacos">Tacos</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Menu Grid -->
+
+        <section class="menu-items-section">
+
+            <div id="alldeals" class="menu-grid">
+
+                <!-- Menu cards will be generated by menu.js -->
+
+            </div>
+
+        </section>
 
     </main>
-    <footer>
-        <span> &copy; All rights reserved to MuhammadMubashir</span>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="global-footer">
+
+        <div class="global-footer-container">
+
+            <p class="global-footer-text">
+                © 2026 Mubashir Café. Crafted with passion by Muhammad Mubashir.
+            </p>
+
+            <a href="/adminlogin"
+               class="global-admin-btn"
+               title="Admin Login">
+
+                ⚙
+
+            </a>
+
+        </div>
+
     </footer>
+
+
     <script src="menu.js"></script>
+
 </body>
 </html>
+

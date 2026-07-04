@@ -29,20 +29,20 @@ setInterval(()=>{
 let actualnumberofbranches=parseInt(numberofbranches.innerText)
 if(actualnumberofbranches<50){
 actualnumberofbranches+=1
-numberofbranches.innerText=actualnumberofbranches  + "+ Branches"
+numberofbranches.innerText=actualnumberofbranches 
 }
 },10)
 setInterval(()=>{
 let actualcustomersperday=parseInt(customersperday.innerText)
 if(actualcustomersperday<1000){
     actualcustomersperday+=2
-customersperday.innerText=actualcustomersperday + "+ Customers/day"
+customersperday.innerText=actualcustomersperday 
 }
 },1)
 setInterval(()=>{
 let actualfeedbackstats=parseInt(feedbackstats.innerText)
 if(actualfeedbackstats<99){
 actualfeedbackstats+=1
-feedbackstats.innerText=actualfeedbackstats + "% Good feedback"
+feedbackstats.innerText=actualfeedbackstats 
 }
 },2)
