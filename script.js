@@ -10,15 +10,20 @@ import updatetotalnumberroute from "./routes/count.js"
 import feedbackroute from "./routes/contactus.js"
 import session from "express-session"
 
+import MongoStore from "connect-mongo";
+
 app.use(
   session({
-      secret: process.env.SESSION_SECRET,
-      resave:false,
-      saveUninitialized:false,
-      cookie:{
-          secure:false,
-          sameSite:"lax"
-      }
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URI
+    }),
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax"
+    }
   })
 );
 app.set("view engine","ejs")
@@ -44,6 +49,7 @@ app.get("/admindashboard",(req,res)=>{
   }
 })
 
-app.listen(port,()=>{
-  console.log("Project is listening at 3000")
-})
+// app.listen(port,()=>{
+//   console.log("Project is listening at 3000")
+// })
+export default app

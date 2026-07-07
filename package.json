@@ -1,12 +1,13 @@
 {
   "name": "cafe-website",
   "version": "1.0.0",
-  "type": "module",
+  "type":"module",
   "description": "A cafe website as a practice.By Muhammad Mubashir ",
-  "main": "script.cjs",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon script.js"
+    "start": "node script.js",
+    "dev": "nodemon script.js"
   },
   "author": "MuhammadMubashir",
   "license": "ISC",

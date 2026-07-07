@@ -1,5 +1,15 @@
 {
   "version": 2,
-  "builds": [ { "src": "script.cjs", "use": "@vercel/node" } ],
-  "routes": [ { "src": "/(.*)", "dest": "/script.cjs" } ]
+  "builds": [
+    {
+      "src": "script.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "script.js"
+    }
+  ]
 }
