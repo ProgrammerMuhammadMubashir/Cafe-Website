@@ -35,7 +35,7 @@ const myChart = new Chart("myChart", {
     },
   },
 });
-let yearnow=new Date().getFullYear()
+let yearnow=new Date().getFullYear() - 1
 spanofchart.innerText=`Monthly orders in year ${ yearnow } `
 
 
@@ -66,30 +66,11 @@ textareainmodal2.value="Write reason for declining order"
 
 const darkmodefunc=()=>{
     html.setAttribute("data-bs-theme","dark")
-    root.style.setProperty("--primarycolor--","white")
-    header.style.backgroundColor="brown"
-   
- Array.from(declinebutton).forEach(btn => {
-     btn.style.backgroundColor="brown"
- });
- Array.from(removeorder).forEach(btn => {
-     btn.style.backgroundColor="brown"
- });
  localStorage.setItem("darkmode","enable")
 }
 const lightmodefunc=()=>{
     html.removeAttribute("data-bs-theme","dark")
-    root.style.removeProperty("--primarycolor--","white")
-    html.setAttribute("data-bs-theme","light")
-   root.style.setProperty("--primarycolor--","brown")
-     header.style.backgroundColor="brown"
-  
-  Array.from(declinebutton).forEach(btn => {
-    btn.style.backgroundColor="brown"
-});
-Array.from(removeorder).forEach(btn => {
-  btn.style.backgroundColor="brown"
-});
+
 localStorage.clear()
 }
 flexSwitchCheckdarkmode.addEventListener("change",()=>{

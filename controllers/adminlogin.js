@@ -7,9 +7,9 @@ import session from "express-session";
 const adminloginfunc = async (req, res) => {
     let { emailofadmin, passwordofadmin } = req.body;
 
+
     if (emailofadmin === process.env.ADMIN_EMAIL) {
-        const isPasswordMatch = await bcrypt.compare(passwordofadmin, process.env.ADMIN_PASSWORD);
-   
+        const isPasswordMatch = await  process.env.ADMIN_PASSWORD===passwordofadmin
         if (isPasswordMatch) {
             req.session.signin="Signindone"
             res.redirect("/admindashboard");

@@ -1,56 +1,411 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="global.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="adminlogin.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@next/dist/aos.css">
 </head>
 
 <body>
 
-<main>
-  <div id="loginform-container">
-    <h2 style="color: var(--primarycolor--);font-family: var(--primaryfont--);">Admin Login</h2>
-    <form action="/adminlogin" method="post" id="loginform">
-      <label for="emailofadmin">Email</label>
-      <input type="email" id="emailofadmin" name="emailofadmin" required spellcheck="false" placeholder="Write email here">
-      <label for="passwordofadmin">Password</label>
-      <input type="password" id="passwordofadmin" name="passwordofadmin" required spellcheck="false" placeholder="Write password here">
-    <button type="submit" id="loginsumbit-btn">Login</button>
-    <span><%= msg %></span>
-  </form>
-  </div>
-</main>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+<main id="admin-login">
 
-   AOS.init({
-  disable: false,
-  startEvent: 'DOMContentLoaded',
-  initClassName: 'aos-init',
-  animatedClassName: 'aos-animate',
-  useClassNames: false,
-  disableMutationObserver: false,
-  debounceDelay: 50,
-  throttleDelay: 99,
-  
-  offset: 120,
-  delay: 0,
-  duration: 400,
-  easing: 'ease',
-  once: false,
-  mirror: false,
-  anchorPlacement: 'top-bottom',
+    <!-- Decorative Background -->
+    <div class="bg-circle circle-one"></div>
+    <div class="bg-circle circle-two"></div>
+
+    <section
+        class="login-card"
+        data-aos="zoom-in"
+        data-aos-duration="700">
+
+        <!-- Logo -->
+
+        <div class="login-logo">
+
+            <div class="logo-wrapper">
+
+                
+
+              <div class="logo-circle">
+                <img src="resources/icon.png" alt="Cafe Logo">
+            </div>
+
+            </div>
+
+        </div>
+
+        <!-- Heading -->
+
+        <header class="login-header">
+
+            <h1>Admin Portal</h1>
+
+            <p>
+                Sign in to manage your premium café dashboard.
+            </p>
+
+        </header>
+
+        <!-- Form -->
+
+        <form
+            action="/adminlogin"
+            method="POST"
+            id="loginform"
+            novalidate>
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <div class="input-box">
+
+                    <input
+                        type="email"
+                        id="emailofadmin"
+                        name="emailofadmin"
+                        spellcheck="false"
+                        autocomplete="off"
+                        required>
+
+                    <label for="emailofadmin">
+
+                        Email Address
+
+                    </label>
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                </div>
+
+                <small
+                    class="validation-message"
+                    id="email-error"></small>
+
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <div class="input-box">
+
+                    <input
+                        type="password"
+                        id="passwordofadmin"
+                        name="passwordofadmin"
+                        autocomplete="off"
+                        required>
+
+                    <label for="passwordofadmin">
+
+                        Password
+
+                    </label>
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="toggle-password">
+
+                        <i
+                            class="fa-regular fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+                <small
+                    class="validation-message"
+                    id="password-error"></small>
+
+            </div>
+
+            <% if(msg){ %>
+
+                <div class="server-error">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span><%= msg %></span>
+
+                </div>
+
+            <% } %>
+
+            <!-- Submit -->
+
+            <button
+                type="submit"
+                id="login-btn">
+
+                <span class="btn-text">
+
+                    Login
+
+                </span>
+
+                <span class="loading-spinner">
+
+                    <i class="fa-solid fa-spinner"></i>
+
+                </span>
+
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+    duration:700,
+    once:true,
+    easing:"ease-in-out"
+
 });
 
 
 
- 
+const form = document.getElementById("loginform");
 
+const email = document.getElementById("emailofadmin");
+const password = document.getElementById("passwordofadmin");
 
-  </script>
+const emailError = document.getElementById("email-error");
+const passwordError = document.getElementById("password-error");
+
+const loginBtn = document.getElementById("login-btn");
+const btnText = loginBtn.querySelector(".btn-text");
+const spinner = loginBtn.querySelector(".loading-spinner");
+
+const togglePassword = document.getElementById("togglePassword");
+const toggleIcon = togglePassword.querySelector("i");
+
+/* -----------------------------
+        Floating Labels
+------------------------------ */
+
+document.querySelectorAll(".input-box input").forEach(input => {
+
+    function updateState(){
+
+        if(input.value.trim() !== ""){
+
+            input.classList.add("filled");
+
+        }else{
+
+            input.classList.remove("filled");
+
+        }
+
+    }
+
+    updateState();
+
+    input.addEventListener("input", updateState);
+
+});
+
+/* -----------------------------
+        Email Validation
+------------------------------ */
+
+function validateEmail(){
+
+    const value = email.value.trim();
+
+    const pattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(value === ""){
+
+        emailError.textContent =
+        "Email address is required.";
+
+        email.classList.add("invalid");
+        email.classList.remove("valid");
+
+        return false;
+
+    }
+
+    if(!pattern.test(value)){
+
+        emailError.textContent =
+        "Please enter a valid email.";
+
+        email.classList.add("invalid");
+        email.classList.remove("valid");
+
+        return false;
+
+    }
+
+    emailError.textContent = "";
+
+    email.classList.remove("invalid");
+    email.classList.add("valid");
+
+    return true;
+
+}
+
+/* -----------------------------
+      Password Validation
+------------------------------ */
+
+function validatePassword(){
+
+    const value = password.value.trim();
+
+    if(value === ""){
+
+        passwordError.textContent =
+        "Password is required.";
+
+        password.classList.add("invalid");
+        password.classList.remove("valid");
+
+        return false;
+
+    }
+
+    if(value.length < 6){
+
+        passwordError.textContent =
+        "Password must contain at least 6 characters.";
+
+        password.classList.add("invalid");
+        password.classList.remove("valid");
+
+        return false;
+
+    }
+
+    passwordError.textContent = "";
+
+    password.classList.remove("invalid");
+    password.classList.add("valid");
+
+    return true;
+
+}
+
+/* -----------------------------
+        Live Validation
+------------------------------ */
+
+email.addEventListener("input", validateEmail);
+
+password.addEventListener("input", validatePassword);
+
+email.addEventListener("blur", validateEmail);
+
+password.addEventListener("blur", validatePassword);
+
+/* -----------------------------
+      Password Visibility
+------------------------------ */
+
+togglePassword.addEventListener("click", ()=>{
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        toggleIcon.classList.remove("fa-eye");
+
+        toggleIcon.classList.add("fa-eye-slash");
+
+    }else{
+
+        password.type = "password";
+
+        toggleIcon.classList.remove("fa-eye-slash");
+
+        toggleIcon.classList.add("fa-eye");
+
+    }
+
+});
+
+/* -----------------------------
+        Submit
+------------------------------ */
+
+form.addEventListener("submit", function(e){
+
+    const emailValid = validateEmail();
+
+    const passwordValid = validatePassword();
+
+    if(!(emailValid && passwordValid)){
+
+        e.preventDefault();
+
+        return;
+
+    }
+
+    // email.value = email.value.trim();
+
+    // password.value = password.value.trim();
+
+    loginBtn.disabled = true;
+
+    btnText.textContent = "Signing In...";
+
+    spinner.classList.add("show");
+
+});
+
+/* -----------------------------
+        Enter Key
+------------------------------ */
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        validateEmail();
+
+        validatePassword();
+
+    }
+
+});
+
+</script>
+
 </body>
 </html>

@@ -33,7 +33,7 @@ basicroute.get("/adminlogin", async (req, res) => {
    let booth=await countcollection.findOne({planname:"booth"})
    let allfeedbacks=await feedbackcollection.find({})
    let allreservations=await onlinereservationcollection.find({})
-        res.render("adminpage.ejs", {
+        res.render("adminpagenew.ejs", {
            recommunal:communal.reserved,
            retableandchair:tableandchair.reserved,
            rebooth:booth.reserved,
@@ -56,7 +56,7 @@ basicroute.get("/admindashboard", async (req, res) => {
         let allfeedbacks=await feedbackcollection.find({})
         let allreservations=await onlinereservationcollection.find({})
         
-             res.render("adminpage.ejs", {
+             res.render("adminpagenew.ejs", {
                 recommunal:communal.reserved,
                 retableandchair:tableandchair.reserved,
                 rebooth:booth.reserved,
