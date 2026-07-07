@@ -18,7 +18,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI
+      mongoUrl: process.env.MONGO_URL
     }),
     cookie: {
       secure: process.env.NODE_ENV === "production",
