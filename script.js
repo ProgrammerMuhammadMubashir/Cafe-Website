@@ -30,6 +30,22 @@ app.set("view engine","ejs")
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+console.log("Current dir:", __dirname);
+
+const viewsPath = path.join(__dirname, "views");
+console.log("Views exists:", fs.existsSync(viewsPath));
+
+if (fs.existsSync(viewsPath)) {
+  console.log("Views files:", fs.readdirSync(viewsPath));
+}
+
 app.use("/",basicroute)
 app.use("/contactus",feedbackroute)
 app.use("/onlinereservation",onlinereservationroute)
